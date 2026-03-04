@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Trek",
+  "scopeName": "source.trek",
+  "fileTypes": ["trek"],
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#string" },
+    { "include": "#number" },
+    { "include": "#keyword" },
+    { "include": "#function" },
+    { "include": "#variable" },
+    { "include": "#operator" },
+    { "include": "#builtin" }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.trek",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.trek",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [
+            { "include": "#comment" }
+          ]
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.trek",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.trek",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.trek",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.trek",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.trek",
+          "match": "\\b([0-9]+\\.?[0-9]*|\\.[0-9]+)([eE][+-]?[0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.hex.trek",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "name": "keyword.control.trek",
+          "match": "\\b(if|else|for|while|break|continue|return|function|class|const|let|var|import|export|from|as|true|false|null|undefined)\\b"
+        }
+      ]
+    },
+    "function": {
+      "patterns": [
+        {
+          "name": "meta.function.trek",
+          "match": "\\b([a-zA-Z_$][a-zA-Z0-9_$]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "variable": {
+      "patterns": [
+        {
+          "name": "variable.other.trek",
+          "match": "\\b[a-zA-Z_$][a-zA-Z0-9_$]*\\b"
+        }
+      ]
+    },
+    "operator": {
+      "patterns": [
+        {
+          "name": "keyword.operator.trek",
+          "match": "(\\+|-|\\*|/|%|==|!=|===|!==|<|>|<=|>=|&&|\\|\\||!|\\?|:)"
+        }
+      ]
+    },
+    "builtin": {
+      "patterns": [
+        {
+          "name": "support.function.trek",
+          "match": "\\b(\\.file|\\.background|\\.color|\\.draw|\\.pos|\\.border|\\.fill|variables|dimensions|radius|hex)\\b"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Trek",
+  "id": "trek",
+  "version": "1.0.0",
+  "extensionKind": "ui",
+  "displayName": "Trek Language Support",
+  "description": "Syntax highlighting and language support for Trek programming language",
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "trek",
+    "language",
+    "syntax",
+    "highlighting",
+    "visual"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Trek Contributors"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "trek",
+        "aliases": [
+          "Trek",
+          "trek"
+        ],
+        "extensions": [
+          ".trek"
+        ],
+        "configuration": "./vscode-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "trek",
+        "scopeName": "source.trek",
+        "path": "./trek.tmLanguage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trek-lang/trek.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trek-lang/trek/issues"
+  },
+  "homepage": "https://trek-lang.org"
+}
